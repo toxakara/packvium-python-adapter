@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "packvium-native"
+version = "0.1.0"
+requires-python = ">=3.9"
+description = "Backend selector for Packvium's native and pure Python engines"
+license = "MIT"
+dependencies = []
+
+[project.optional-dependencies]
+# `packvium` is deliberately not a hard dependency of the package itself (see
+# README's "does not replace or shadow" note) -- it is only needed to exercise the
+# fallback path in tests.
+test = ["pytest", "packvium"]
+# Convenience extra: `pip install packvium-native[native]` pulls in the compiled Rust
+# wheel too, rather than requiring a second, separate install command.
+native = ["packvium-native-rust"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
