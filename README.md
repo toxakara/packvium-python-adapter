@@ -36,6 +36,19 @@ print(result["status"])  # "feasible"
 The adapter does not replace the `packvium` import. It is useful when an application
 wants one stable call site with a native fast path and a pure-Python fallback.
 
+## Examples
+
+Runnable, in [`examples/`](examples). Each one is a single file you can read top to bottom
+and execute without a project around it.
+
+| File | What it shows |
+| --- | --- |
+| [`basic.py`](examples/basic.py) | Pack through the adapter and report which backend answered. |
+
+```bash
+python3 examples/basic.py
+```
+
 ## Platforms
 
 Native wheels support Linux x86_64/aarch64, macOS Apple Silicon/Intel and Windows. The
