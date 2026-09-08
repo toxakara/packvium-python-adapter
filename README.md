@@ -62,6 +62,7 @@ and execute without a project around it.
 | File | What it shows |
 | --- | --- |
 | [`basic.py`](examples/basic.py) | Pack through the adapter and report which backend answered. |
+| [`shapes.py`](examples/shapes.py) | Items that are not their box: complementary wedges sharing one crate as `convex_hull`, and a cushion that compresses under load until the crush limit refuses it — the same numbers whichever backend answered. |
 
 ```bash
 python3 examples/basic.py
