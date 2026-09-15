@@ -76,8 +76,13 @@ jobs:
   # human and a maintenance scorer can read, and cadence is a signal tags do not carry.
   # Every mirror had every tag and zero Releases until 1.1.0, whose six were created by
   # hand -- which is how the rule was being met, and therefore how it would stop being met.
+  #
+  # `packvium-native` is deliberately unpublished (DEFERRED in the workspace's publication
+  # check), so `publish` fails on every tag. The Release is cut whenever the build succeeded,
+  # instead of being skipped and then made by hand, as v1.1.0's and v1.2.0's were.
   github-release:
-    needs: publish
+    needs: [build, publish]
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write   # the Release is the only thing this workflow writes to the repository
