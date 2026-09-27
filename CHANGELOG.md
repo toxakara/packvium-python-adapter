@@ -4,6 +4,13 @@ What changed in `packvium-native` (Python), release by release. The format follo
 [Keep a Changelog](https://keepachangelog.com/1.1.0/) and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0]
+
+A version-alignment release of the source. No code changes.
+
+`packvium-native` is still not published to PyPI: the native wheels it would select between
+are not built yet. Use [`packvium`](https://pypi.org/project/packvium/1.4.0/) directly.
+
 ## [1.3.0]
 
 A version-alignment release of the source. No code changes.
