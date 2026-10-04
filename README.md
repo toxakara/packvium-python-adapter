@@ -93,6 +93,23 @@ Documentation, the constraint reference and the benchmarks are at
 | PHP FFI bridge — [`packvium/native-bridge`](https://packagist.org/packages/packvium/native-bridge) | `composer require packvium/native-bridge` | [packvium-php-bridge](https://github.com/toxakara/packvium-php-bridge) |
 | Python native selector — `packvium-native` | from source until the native wheels ship | [packvium-python-adapter](https://github.com/toxakara/packvium-python-adapter) |
 
+## Citation
+
+If Packvium supports your research, cite it as software. GitHub's **Cite this repository**
+button reads [`CITATION.cff`](https://github.com/toxakara/packvium-python-adapter/blob/main/CITATION.cff), and
+[`codemeta.json`](https://github.com/toxakara/packvium-python-adapter/blob/main/codemeta.json) carries the same record in
+CodeMeta form.
+
+```bibtex
+@software{packvium_python_adapter,
+  author  = {{Packvium contributors}},
+  title   = {Packvium native backend selector for Python},
+  version = {1.5.0},
+  license = {MIT},
+  url     = {https://packvium.com}
+}
+```
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
