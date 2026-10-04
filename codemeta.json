@@ -1,0 +1,31 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Packvium native backend selector for Python",
+  "description": "Packvium backend selector: the native engine when a wheel is available, pure Python otherwise.",
+  "version": "1.5.0",
+  "license": "https://spdx.org/licenses/MIT",
+  "author": [
+    {
+      "@type": "Organization",
+      "name": "Packvium contributors",
+      "url": "https://packvium.com"
+    }
+  ],
+  "url": "https://packvium.com",
+  "codeRepository": "https://github.com/toxakara/packvium-python-adapter",
+  "issueTracker": "https://github.com/toxakara/packvium-python-adapter/issues",
+  "programmingLanguage": "Python",
+  "keywords": [
+    "3d-bin-packing",
+    "bin-packing",
+    "3d-packing",
+    "cartonization",
+    "container-loading",
+    "pallet-packing",
+    "truck-loading",
+    "packing-algorithm",
+    "logistics",
+    "deterministic"
+  ]
+}
