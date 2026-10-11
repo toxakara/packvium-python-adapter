@@ -104,7 +104,7 @@ CodeMeta form.
 @software{packvium_python_adapter,
   author  = {{Packvium contributors}},
   title   = {Packvium native backend selector for Python},
-  version = {1.5.0},
+  version = {1.6.0},
   license = {MIT},
   url     = {https://packvium.com}
 }
