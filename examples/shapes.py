@@ -22,7 +22,9 @@ from packvium_native import backend, pack
 
 print(f"answered by the {backend()} backend\n")
 
-MM = {"units": {"length": "mm"}}
+# The time limit is a fuse far above what these solves need, so the answers never depend
+# on machine load.
+MM = {"units": {"length": "mm"}, "configuration": {"time_limit_ms": 60_000}}
 
 
 def crate(length: str, width: str, height: str) -> list:
