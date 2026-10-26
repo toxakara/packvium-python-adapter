@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "Packvium native backend selector for Python",
   "description": "Packvium backend selector: the native engine when a wheel is available, pure Python otherwise.",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "license": "https://spdx.org/licenses/MIT",
   "author": [
     {
@@ -26,6 +26,8 @@
     "truck-loading",
     "packing-algorithm",
     "logistics",
-    "deterministic"
+    "deterministic",
+    "box-packing",
+    "load-planning"
   ]
 }
