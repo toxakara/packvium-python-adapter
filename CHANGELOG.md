@@ -4,6 +4,12 @@ What changed in `packvium-native` (Python), release by release. The format follo
 [Keep a Changelog](https://keepachangelog.com/1.1.0/) and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0]
+
+No changes of its own; the `native` extra is pinned to `packvium-native-rust==1.8.0`. Neither
+this package nor that one is on PyPI yet, so use
+[`packvium`](https://pypi.org/project/packvium/) directly.
+
 ## [1.7.0]
 
 The native path now raises what the pure engine raises (see *Fixed*).
