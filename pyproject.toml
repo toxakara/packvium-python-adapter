@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "packvium-native"
-version = "1.8.0"
+version = "1.9.0"
 requires-python = ">=3.9"
 description = "Packvium backend selector: the native engine when a wheel is available, pure Python otherwise."
 readme = "README.md"
@@ -31,7 +31,7 @@ test = ["pytest", "packvium; python_version >= '3.10'"]
 # wheel too, rather than requiring a second, separate install command. Pinned to this
 # release, which `scripts/suite_version.py` keeps in step: a wheel from another release
 # answers with that release's rules while this selector claims its own.
-native = ["packvium-native-rust==1.8.0"]
+native = ["packvium-native-rust==1.9.0"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
