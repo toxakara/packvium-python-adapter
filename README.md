@@ -62,7 +62,7 @@ and execute without a project around it.
 | File | What it shows |
 | --- | --- |
 | [`basic.py`](examples/basic.py) | Pack through the adapter and report which backend answered. |
-| [`shapes.py`](examples/shapes.py) | Items that are not their box: complementary wedges sharing one crate as `convex_hull`, and a cushion that compresses under load until the crush limit refuses it — the same numbers whichever backend answered. |
+| [`shapes.py`](examples/shapes.py) | Items that are not their box: complementary wedges sharing one crate as `convex_hull`, two copies of one wedge that need the signed rotation `-L-W+H`, a cushion that compresses under load until the crush limit refuses it, and a gusseted bag that holds a layer more than a flat one — the same numbers whichever backend answered. |
 
 ```bash
 python3 examples/basic.py
@@ -89,7 +89,7 @@ Documentation, the constraint reference and the benchmarks are at
 | --- | --- | --- |
 | Python — [`packvium`](https://pypi.org/project/packvium/) | `pip install packvium` | [packvium-python](https://github.com/toxakara/packvium-python) |
 | PHP — [`packvium/packvium`](https://packagist.org/packages/packvium/packvium) | `composer require packvium/packvium` | [packvium-php](https://github.com/toxakara/packvium-php) |
-| Rust — [`packvium`](https://crates.io/crates/packvium) | `packvium = "1.9"` | [packvium-rust](https://github.com/toxakara/packvium-rust) |
+| Rust — [`packvium`](https://crates.io/crates/packvium) | `packvium = "1.10"` | [packvium-rust](https://github.com/toxakara/packvium-rust) |
 | Node.js — [`@packvium/engine`](https://www.npmjs.com/package/@packvium/engine) | `npm install @packvium/engine` | [packvium-node](https://github.com/toxakara/packvium-node) |
 | Browser / WebAssembly — [`@packvium/browser`](https://www.npmjs.com/package/@packvium/browser) | `npm install @packvium/browser` | [packvium-wasm](https://github.com/toxakara/packvium-wasm) |
 | PHP FFI bridge — [`packvium/native-bridge`](https://packagist.org/packages/packvium/native-bridge) | `composer require packvium/native-bridge` | [packvium-php-bridge](https://github.com/toxakara/packvium-php-bridge) |
@@ -106,7 +106,7 @@ CodeMeta form.
 @software{packvium_python_adapter,
   author  = {{Packvium contributors}},
   title   = {Packvium native backend selector for Python},
-  version = {1.9.0},
+  version = {1.10.0},
   license = {MIT},
   url     = {https://packvium.com}
 }

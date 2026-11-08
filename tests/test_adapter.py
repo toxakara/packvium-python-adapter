@@ -38,7 +38,8 @@ REFUSED = {
     },
     "unsupported": {
         "items": [{"id": "cube", "quantity": 1, "dimensions": SIDE}],
-        "containers": [{"id": "box", "inner_dimensions": SIDE, "pallet_overhang_limit": "1"}],
+        "containers": [{"id": "box", "inner_dimensions": SIDE,
+                        "pallet_overhang_limit": {"length": "1", "width": "1"}, "axles": []}],
     },
     "policy": {
         "items": [{"id": "cube", "quantity": 1, "dimensions": SIDE}],
@@ -95,7 +96,7 @@ def python_refusal(request: dict) -> BaseException:
 NATIVE_ERRORS = {
     "collision": StandInError("invalid_fixed_placement: collision: cube#1 with cube#2", code="invalid_fixed_placement",
                               reason="cannot_hold", field="/fixed_placements", detail="collision: cube#1 with cube#2"),
-    "unsupported": StandInError("unsupported_feature: the Rust core does not yet implement container.pallet_overhang_limit; "
+    "unsupported": StandInError("unsupported_feature: the Rust core does not yet implement container.pallet_overhang_limit+axles; "
                                 "the request was rejected instead of silently ignoring public fields",
                                 code="unsupported_feature"),
     "policy": StandInError("invalid input: policy must be an object", code="invalid_input"),
