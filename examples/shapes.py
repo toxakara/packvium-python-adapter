@@ -7,10 +7,11 @@ Run it:
 `basic.py` shows that the adapter picks a backend for you. This example answers the
 question that follows: does the accelerated path support everything the pure one does?
 
-It does, and the point is worth making with the newest capability rather than the oldest.
+It does, and the point is worth making with the newest capabilities rather than the oldest.
 `shape_type` says an item is not simply its declared box -- `convex_hull` narrows it in
 space, `compressible` in height under load -- and both belong to the shared JSON contract
-rather than to any one engine. The adapter forwards the request untouched, so the numbers
+rather than to any one engine, as do the signed hull rotations and the gusseted bag
+added in 1.10. The adapter forwards the request untouched, so the numbers
 below are the same whether the compiled Rust wheel answered or the pure-Python package
 did. `backend()` says which one it was; the answer does not depend on it.
 
@@ -103,3 +104,40 @@ print("\ncompressible -- a cushion that yields to the load above it")
 for kilograms in (101, 102):
     summarise(f"brick {kilograms} kg", {**MM, "items": [CUSHION, brick(kilograms)],
                                         "containers": crate("100", "100", "200")})
+
+# ------------------------------------------------------- signed hull rotations
+#
+# Two copies of the *same* wedge meet along the diagonal only if the second is turned half
+# a revolution about the vertical axis. That is `-L-W+H`, one of the 18 signed rotations a
+# `convex_hull` item may list beside the six axis permutations every item knows. A signed
+# code on anything but a hull is refused.
+
+
+def two_copies(rotations: list) -> dict:
+    item = {**wedge("wedge", LOWER_WEDGE), "quantity": 2, "allowed_rotations": rotations}
+    return {**MM, "items": [item], "containers": crate("100", "100", "100")}
+
+
+print("\nconvex_hull -- two copies of one wedge")
+summarise("LWH only", two_copies(["LWH"]))
+summarise("LWH and -L-W+H", two_copies(["LWH", "-L-W+H"]))
+
+# ---------------------------------------------------------------- gusseted bags
+#
+# A flat bag's width pays for the load's thickness: `b + c <= W`. A gusseted bag folds
+# `side_gusset_depth` of extra material into its sides, so the rule reads `b + c <= W + G`.
+# The books are 100 mm wide and 20 mm thick in a 150 mm pouch: two layers flat, three with a
+# 25 mm gusset.
+
+
+def pouch(boundary: dict) -> dict:
+    return {**MM,
+            "items": [{"id": "book", "quantity": 4, "weight": "300 g", "allowed_rotations": ["LWH"],
+                       "dimensions": {"length": "200", "width": "100", "height": "20"}}],
+            "containers": [{"id": "pouch", "quantity": 1, "deformable_boundary": boundary,
+                            "inner_dimensions": {"length": "300", "width": "150", "height": "100"}}]}
+
+
+print("\ndeformable_boundary -- one pouch, flat and gusseted")
+summarise("flat_bag", pouch({"kind": "flat_bag"}))
+summarise("gusseted_bag, 25 mm", pouch({"kind": "gusseted_bag", "side_gusset_depth": "25"}))
